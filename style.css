@@ -32,7 +32,7 @@
 .blog-main>div.blog-post:last-of-type{
      background-color: dodgerblue;
  }
-aside.blog-sidebar div.p-4:nth-child(2) ol.list-unstyled:first-of-type li{
+aside.blog-sidebar div.p-4:nth-of-type(2) ol.list-unstyled li{
    background-color:forestgreen;
 }
 .blog-main>div.blog-post:nth-of-type(2)>p.blog-post-meta a{

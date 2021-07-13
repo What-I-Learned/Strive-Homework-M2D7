@@ -479,6 +479,46 @@
             removeLinks()
             changeColumnSize()
             removeMagGlass()
+            trimParagraph()
+        }
+
+        function trimParagraph(){
+            let firstP = document.querySelectorAll(".blog-post p:nth-of-type(2)")
+            for(let paragraph of firstP){   
+               paragraph.innerText= paragraph.innerText.slice(50,paragraph.length) 
+            }
+        }
+
+
+        let newPostbtn = document.querySelector(".blog-pagination>a:nth-of-type(2)")
+        newPostbtn.classList.remove("disabled")
+        newPostbtn.addEventListener("click",addNewBlogPost)
+        function addNewBlogPost(){
+            let blgMain = document.querySelector(".blog-main")
+            let pagination = document.querySelector(".blog-pagination")
+            let postDiv = document.createElement("div")
+            let postTitle = document.createElement("h2")
+
+            postDiv.classList.add("blog-post")
+            postTitle.classList.add("blog-post-title")
+            postTitle.innerText = "This is new post"
+            postDiv.appendChild(postTitle)
+            blgMain.insertBefore(postDiv,pagination)
+        }
+        let deletePost = document.querySelectorAll(".blog-pagination>a.btn")[0]
+        deletePost.addEventListener("click",removeLastPost)
+        function removeLastPost(){
+            let lastPost = document.querySelector(".blog-post:last-of-type")
+            let blgMain = document.querySelector(".blog-main")
+            // lastPost.innerHTML=""
+            blgMain.removeChild(lastPost)
+        }
+        let authors = document.querySelectorAll(".blog-post-meta>a")
+        for(let author of authors){
+            author.addEventListener("mouseenter",alertBox)
+        }
+        function alertBox(event){
+            alert(event.target.innerText);
         }
         
 
