@@ -432,6 +432,42 @@
     </footer>
 
     <script>
+        function newLink(){
+            let navigation = document.querySelector("nav")
+            let alink = document.createElement("a")
+            let linkClassess = ["p-2", "text-muted"]
+            alink.textContent = "New link"
+            alink.classList.add(...linkClassess)
+            navigation.appendChild(alink)
+        }
+        newLink()
+        let mainTitle = document.querySelector(".jumbotron h1")
+        function changeColor(){
+            
+            mainTitle.style.color="#32a852"
+        }
+        mainTitle.addEventListener("click",changeColors)
+
+        function changeBackground(){
+            let jumbo = document.querySelector(".jumbotron")
+            jumbo.classList.remove("bg-dark")
+            jumbo.style.backgroundColor = "#91e9eb"
+        }
+
+        function removeLinks(){
+            let elswhereElement = document.querySelectorAll("aside .p-4 ol")
+
+            elswhereElement[elswhereElement.length-1].innerHTML = ""
+        }
+        
+
+        function changeColors(){
+            changeBackground()
+            changeColor()
+            removeLinks()
+        }
+        
+
       /*
         JS Exercises
         EX11) Write a function to add a new link into the navbar
