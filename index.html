@@ -464,9 +464,13 @@
         
         function changeColumnSize(){
             let firstColumn = document.querySelectorAll(".jumbotron div")[0]
-            console.log(firstColumn);
             firstColumn.classList.remove("col-md-6")
             firstColumn.classList.add("col-md-12")
+        }
+
+        function removeMagGlass(){
+            let search = document.querySelector("header div.col-4 a svg")
+             search.innerHTML=''
         }
 
         function changeColors(){
@@ -474,6 +478,7 @@
             changeColor()
             removeLinks()
             changeColumnSize()
+            removeMagGlass()
         }
         
 
