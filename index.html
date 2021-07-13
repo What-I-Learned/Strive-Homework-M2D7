@@ -442,6 +442,8 @@
         }
         newLink()
         let mainTitle = document.querySelector(".jumbotron h1")
+        let jumbo = document.querySelector(".jumbotron")
+
         function changeColor(){
             
             mainTitle.style.color="#32a852"
@@ -449,7 +451,7 @@
         mainTitle.addEventListener("click",changeColors)
 
         function changeBackground(){
-            let jumbo = document.querySelector(".jumbotron")
+            
             jumbo.classList.remove("bg-dark")
             jumbo.style.backgroundColor = "#91e9eb"
         }
@@ -460,11 +462,18 @@
             elswhereElement[elswhereElement.length-1].innerHTML = ""
         }
         
+        function changeColumnSize(){
+            let firstColumn = document.querySelectorAll(".jumbotron div")[0]
+            console.log(firstColumn);
+            firstColumn.classList.remove("col-md-6")
+            firstColumn.classList.add("col-md-12")
+        }
 
         function changeColors(){
             changeBackground()
             changeColor()
             removeLinks()
+            changeColumnSize()
         }
         
 
